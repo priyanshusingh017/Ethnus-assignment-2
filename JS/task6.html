@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #fafafa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .login-container {
+            background-color: white;
+            border: 1px solid #dbdbdb;
+            border-radius: 1px;
+            padding: 30px 40px;
+            max-width: 350px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .instagram-text {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 36px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #262626;
+        }
+        
+        .form-group {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .icon {
+            position: absolute;
+            left: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #8e8e8e;
+            width: 14px;
+            text-align: center;
+        }
+        
+        input {
+            width: 100%;
+            padding: 9px 8px 7px 30px;
+            background-color: #fafafa;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            font-size: 12px;
+            outline: none;
+        }
+        
+        input:focus {
+            border-color: #a8a8a8;
+        }
+        
+        .button {
+            width: 100%;
+            background-color: #0095f6;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 8px;
+            cursor: pointer;
+        }
+        
+        .remember-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 12px;
+            font-size: 12px;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        
+        .forgot-password {
+            color: #0095f6;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        
+        .signup-container {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        .signup-link {
+            color: #0095f6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1 class="instagram-text">Instagram</h1>
+        <form id="login-form">
+            <div class="form-group">
+                <span class="icon">👤</span>
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <span class="icon">🔒</span>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="button">Log in</button>
+            <div class="remember-container">
+                <label class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <span>Remember me</span>
+                </label>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+        </form>
+    </div>
+    <div class="signup-container">
+        Don't have an account? <a href="#" class="signup-link">Sign up here.</a>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // In a real application, you would send this to a server
+            console.log('Login attempt:', { username, password });
+            
+            // For demonstration purposes only
+            alert('Login attempt with username: ' + username);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-8 Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .task-header {
+            background-color: #2e5c1e;
+            color: white;
+            padding: 10px 20px;
+            font-size: 22px;
+            position: relative;
+            width: 35%;
+            clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5e9c9 0%, #e996ba 100%);
+            border-radius: 5px;
+        }
+        
+        .form-title {
+            text-align: center;
+            color: blue;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+        
+        .form-label {
+            width: 150px;
+            text-align: right;
+            padding-right: 15px;
+            padding-top: 5px;
+        }
+        
+        .form-input {
+            flex: 1;
+        }
+        
+        input[type="text"], 
+        input[type="email"], 
+        input[type="password"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        textarea {
+            height: 60px;
+        }
+        
+        .error-message {
+            color: red;
+            margin-left: 10px;
+            font-size: 12px;
+        }
+        
+        .languages-group {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .checkbox-group {
+            margin-left: 150px;
+            margin-top: 10px;
+        }
+        
+        .login-text {
+            text-align: right;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        .login-text a {
+            color: blue;
+            text-decoration: none;
+        }
+        
+        .register-button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .register-button {
+            background-color: red;
+            color: white;
+            padding: 8px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="task-header">Task-8</div>
+    
+    <div class="form-container">
+        <div class="form-title">Registration form</div>
+        
+        <form id="registrationForm">
+            <div class="form-group">
+                <label class="form-label">First Name</label>
+                <div class="form-input">
+                    <input type="text" name="firstName">
+                </div>
+                <span class="error-message">POOR</span>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <div class="form-input">
+                    <input type="text" name="lastName">
+                </div>
+                <span class="error-message">POOR</span>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <div class="form-input">
+                    <input type="email" name="email">
+                </div>
+                <span class="error-message">POOR</span>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <div class="form-input">
+                    <input type="password" name="password">
+                </div>
+                <span class="error-message">POOR</span>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Re-enter Password</label>
+                <div class="form-input">
+                    <input type="password" name="confirmPassword">
+                </div>
+                <span class="error-message">POOR OR MISMATCH</span>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Gender</label>
+                <div class="form-input">
+                    <input type="radio" name="gender" value="Male" checked> Male<br>
+                    <input type="radio" name="gender" value="Female"> Female
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Age</label>
+                <div class="form-input">
+                    <input type="number" name="age">
+                </div>
+                <span class="error-message">POOR</span>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <div class="form-input">
+                    <input type="text" name="phone">
+                </div>
+                <span class="error-message">POOR</span>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Address</label>
+                <div class="form-input">
+                    <textarea name="address"></textarea>
+                </div>
+                <span class="error-message">POOR</span>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">State</label>
+                <div class="form-input">
+                    <input type="text" name="state">
+                </div>
+                <span class="error-message">POOR</span>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Country</label>
+                <div class="form-input">
+                    <select name="country">
+                        <option value="">Choose your country ▼</option>
+                        <option value="usa">USA</option>
+                        <option value="canada">Canada</option>
+                        <option value="india">India</option>
+                        <option value="uk">United Kingdom</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Languages known</label>
+                <div class="form-input languages-group">
+                    <label><input type="checkbox" name="languages" value="English"> English</label>
+                    <label><input type="checkbox" name="languages" value="Kannada"> Kannada</label>
+                    <label><input type="checkbox" name="languages" value="Hindi"> Hindi</label>
+                    <label><input type="checkbox" name="languages" value="Telugu"> Telugu</label>
+                </div>
+            </div>
+            
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="declaration" checked> Hereby I declare all the given details are true</label>
+            </div>
+            
+            <div class="login-text">
+                Log in to <a href="#">Ethnus</a> website
+            </div>
+            
+            <div class="register-button-container">
+                <button type="submit" class="register-button">REGISTER</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Form validation would go here in a real application
+            alert('Registration form submitted');
+        });
+    </script>
+</body>
+</html>

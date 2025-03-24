@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-4: Show Date and Time</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #36d1dc, #5b86e5);
+        }
+        .card {
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            background: white;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .btn {
+            width: 100%;
+            margin-top: 10px;
+        }
+        p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Task-4: Show Date and Time</h2>
+
+        <button class="btn btn-primary" onclick="showDate()">Show Date</button>
+        <p id="date"></p>
+
+        <button class="btn btn-success" onclick="showTime()">Show Time</button>
+        <p id="time"></p>
+    </div>
+
+    <script>
+        function showDate() {
+            let today = new Date();
+            let date = today.getDate() + ' ' + 
+                       today.toLocaleString('default', { month: 'long' }) + ' ' + 
+                       today.getFullYear();
+            document.getElementById("date").innerHTML = "📅 Date: " + date;
+        }
+
+        function showTime() {
+            let today = new Date();
+            let hours = today.getHours();
+            let minutes = today.getMinutes();
+            let seconds = today.getSeconds();
+            let ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12 || 12; // Convert to 12-hour format
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            let time = `${hours}:${minutes}:${seconds} ${ampm}`;
+            document.getElementById("time").innerHTML = "⏰ Time: " + time;
+        }
+    </script>
+
+</body>
+</html>
