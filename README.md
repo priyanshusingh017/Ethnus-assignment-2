@@ -26,18 +26,6 @@ This project was developed as part of an assignment for **Ethnus**. It highlight
 
 ---
 
-## 📁 **Project Structure**  
-The project files are organized as follows:  
-
-Ethnus-assignment-2/
-├── index.html # Main HTML file
-├── styles.css # CSS file for styling
-├── script.js # JavaScript file for functionality
-├── assets/ # Folder for images, icons, or other resources
-└── README.md # Project documentation (this file)
-
----
-
 ## 🚀 **Features**  
 1. Fully responsive design compatible with all screen sizes.  
 2. Clean and professional UI/UX design.  
